@@ -1,20 +1,43 @@
-﻿// GameOfLife.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
+﻿#include <conio.h>
+#include "Plansza.h"
 
-#include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Plansza _Plansza(10, 10); // Width & Height
+
+	vector<string> Table1 = { // Heart
+		".", ".", ".", ".",".", ".", ".", ".", ".", ".",
+		".", ".", ".", ".",".", ".", ".", ".", ".", ".",
+		".", ".", "#", "#",".", "#", "#", ".", ".", ".",
+		".", "#", ".", ".","#", ".", ".", "#", ".", ".",
+		".", "#", ".", ".",".", ".", ".", "#", ".", ".",
+		".", "#", ".", ".",".", ".", ".", "#", ".", ".",
+		".", ".", "#", ".",".", ".", "#", ".", ".", ".",
+		".", ".", ".", "#",".", "#", ".", ".", ".", ".",
+		".", ".", ".", ".","#", ".", ".", ".", ".", ".",
+		".", ".", ".", ".",".", ".", ".", ".", ".", ".",
+	};
+
+	map<int, string> Table = {
+		{44,"#"},
+		{45,"#"},
+		{46,"#"},
+		{55,"#"},
+
+	};
+
+	_Plansza.SetAliveCells(Table);
+
+	while (true)
+	{
+		_Plansza.Render();
+
+		unsigned char Key = _getch();
+		if (Key == 'q')
+			_Plansza.MakeStep();
+	}
+
+	return 0;
 }
 
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
-
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln

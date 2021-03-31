@@ -25,5 +25,7 @@ public:
 	void MakeStep();
 	void SetAliveCells(vector<string> &Table);
 	void SetAliveCells(map<int,string> &Table);
+
+	int CountAliveCells();
 };
 

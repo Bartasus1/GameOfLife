@@ -36,9 +36,9 @@ void Plansza::MakeStep()
 
 	for (int i = 0; i < Cells.size(); i++)
 	{
-		int AliveNeighbours = Cells[i].CountAliveNeighbours(this, i);
-
 		NewCells.push_back(Cells[i]);
+
+		int AliveNeighbours = Cells[i].CountAliveNeighbours(this, i);
 		NewCells[i].SetAliveNeighbours(AliveNeighbours);
 	}
 	for (int i = 0; i < Cells.size(); i++)
@@ -69,6 +69,18 @@ void Plansza::SetAliveCells(map<int, string> &Table)
 		int Index = clamp(Pair.first, 0, (int)Cells.size());
 		Cells[Index].SetIsAlive(true);
 	}
+}
+
+int Plansza::CountAliveCells()
+{
+	int AliveCells = 0;
+	for (auto &Cell : Cells)
+	{
+		if (Cell.GetIsAlive())
+			AliveCells++;
+	}
+
+	return AliveCells;
 }
 
 Plansza::~Plansza()

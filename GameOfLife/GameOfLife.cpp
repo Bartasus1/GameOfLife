@@ -111,7 +111,7 @@ void Zadanie3()
 	{
 		for (int N = 0; N <= 100; N++)
 		{
-			Zadanie2(0,8, i);
+			Zadanie2(0.8,i, i);
 		}
 		cout << endl;
 	}

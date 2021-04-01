@@ -50,7 +50,7 @@ void Show()
 
 	while (true)
 	{
-		cout << "\x1b[3J";
+		cout << "\x1b[2J";
 
 		_Plansza.Render();
 

@@ -1,0 +1,5 @@
+B³¹d standardowy œredniej dla size10: 0.003898752939453056
+B³¹d standardowy œredniej dla size100: 0.0011736316934320803
+B³¹d standardowy œredniej dla size200: 0.0005585868313099854
+B³¹d standardowy œredniej dla size500: 0.0002405679122653817
+B³¹d standardowy œredniej dla size1000: 0.00011865117023451476

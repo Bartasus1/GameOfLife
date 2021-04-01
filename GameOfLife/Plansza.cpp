@@ -1,6 +1,7 @@
 #include "Plansza.h"
 #include "Komorka.h"
 #include <algorithm>
+#include <cmath>
 
 Plansza::Plansza(int W, int H) : Width(W), Height(H)
 {
@@ -12,8 +13,6 @@ Plansza::Plansza(int W, int H) : Width(W), Height(H)
 		Cells[i] = Komorka();
 	}
 }
-
-
 
 void Plansza::Render()
 {
